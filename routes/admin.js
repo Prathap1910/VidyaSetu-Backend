@@ -15,7 +15,7 @@ import { getMyCourses } from "../controllers/courses.js";
 const upload = multer({ dest: "uploads/" });
 
 const router = express.Router();
-
+//adding a new course
 router.post("/course/new", isAuth, isAdmin, uploadFiles, createCourse);
 
 router.post("/course/:id", isAuth, isAdmin, uploadFiles, addLecture);
@@ -23,7 +23,7 @@ router.post("/course/:id", isAuth, isAdmin, uploadFiles, addLecture);
 router.get("/stats", isAuth, isAdmin, allStats);
 
 router.get("/mycourses", isAuth, getMyCourses);
-
+//Delete a course with a given id
 router.delete("/course/:id", isAuth, isAdmin, deleteCourse);
 
 router.delete("/lecture/:id", isAuth, isAdmin, deleteLecture);
@@ -33,3 +33,4 @@ router.put("/user/:id", isAuth, isAdmin, updateRole);
 router.get("/users", isAuth, isAdmin, getAllUser);
 
 export default router;
+
