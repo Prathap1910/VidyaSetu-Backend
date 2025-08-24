@@ -5,6 +5,7 @@ import { rm } from "fs";
 import { promisify } from "util";
 import fs from "fs";
 import { User } from "../models/user.js";
+const x=12;
 export const createCourse = tryCatch(async (req, res) => {
   const { title, description, category, createdBy, duration, price } = req.body;
   const image = req.file;
@@ -147,4 +148,5 @@ export const updateRole = tryCatch(async (req, res) => {
     });
   }
 });
+
 
