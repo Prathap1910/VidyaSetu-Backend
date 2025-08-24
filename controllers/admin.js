@@ -36,7 +36,7 @@ export const addLecture = tryCatch(async (req, res) => {
       message: "Video file is required",
     });
   }
-
+//Creating the lecture
   const lecture = await Lecture.create({
     title,
     description,
@@ -147,3 +147,4 @@ export const updateRole = tryCatch(async (req, res) => {
     });
   }
 });
+
